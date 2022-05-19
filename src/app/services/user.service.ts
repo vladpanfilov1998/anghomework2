@@ -16,4 +16,8 @@ export class UserService {
   getAll(): Observable<IUser[]> {
     return this.httpClient.get<IUser[]>(urls.user)
   }
+
+  getById(id: string):Observable<IUser>{
+    return this.httpClient.get<IUser>(`${urls.user}/${id}`)
+  }
 }
